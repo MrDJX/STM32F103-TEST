@@ -5,8 +5,10 @@
 *.dep
 *.stw
 *.wdb
-*.txt
 *.spy
+*.axf
+*.htm
+*.crf
 #ºöÂÔdebugÎÄ¼ş¼Ğ
 !*.c
 !*.h
