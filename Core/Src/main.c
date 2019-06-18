@@ -407,8 +407,8 @@ void StartTask02(void const * argument)
   for(;;)
   {
     HAL_ADC_Start_DMA(&hadc1,ADC_VALUE,4);
-    printf("aaaaaaaaaaaa");
-    osDelay(1);
+    printf("ADC chanel 1 VALUE: %d",ADC_VALUE[0]);
+    osDelay(500);
   }
   /* USER CODE END StartTask02 */
 }
