@@ -407,7 +407,7 @@ void StartTask02(void const * argument)
   for(;;)
   {
     HAL_ADC_Start_DMA(&hadc1,ADC_VALUE,4);
-    printf("aaaaaaa");
+    printf("aaaaaaaaaaaa");
     osDelay(1);
   }
   /* USER CODE END StartTask02 */
