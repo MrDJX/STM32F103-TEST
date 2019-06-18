@@ -21,7 +21,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "cmsis_os.h"
-
+#include "stdio.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -72,6 +72,17 @@ void StartTask02(void const * argument);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+uint32_t ADC_VALUE[4]={0};
+#ifdef _GNUC_
+#define PUTCHAR_PROTOTYPE int __io_putchar(int ch)
+#else
+#define PUTCHAR_PROTOTYPE int fputc(int ch, FILE *f)
+#endif
+PUTCHAR_PROTOTYPE
+{
+    HAL_UART_Transmit(&huart1,(uint8_t *)&ch,1,0xffff);
+    return ch;
+}
 
 /* USER CODE END 0 */
 
@@ -395,6 +406,8 @@ void StartTask02(void const * argument)
   /* Infinite loop */
   for(;;)
   {
+    HAL_ADC_Start_DMA(&hadc1,ADC_VALUE,4);
+    printf("aaa");
     osDelay(1);
   }
   /* USER CODE END StartTask02 */

@@ -1,0 +1,13 @@
+#忽略.o文件版本控制
+*.o
+*.ls
+*.wed
+*.dep
+*.stw
+*.wdb
+*.txt
+*.spy
+#忽略debug文件夹
+!*.c
+!*.h
+!.hex
